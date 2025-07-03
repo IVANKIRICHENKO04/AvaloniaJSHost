@@ -9,27 +9,17 @@ namespace AvaloniaJSHost.Views
     {
         public IPlatformHandle CreateControl(IPlatformHandle parent, Func<IPlatformHandle> createDefault)
         {
-            //if (isSecond)
-            //{
-            //    var iframe = EmbedInterop.CreateElement("iframe");
-            //    iframe.SetProperty("src", "https://www.youtube.com/embed/kZCIporjJ70");
+            var parentContainer = (JSObjectControlHandle)createDefault();
 
-            //    return new JSObjectControlHandle(iframe);
-            //}
-            //else
-            //{
-                var parentContainer = (JSObjectControlHandle)createDefault();
+            AddButton(parentContainer.Object);
 
-                AddButton(parentContainer.Object);
+            return parentContainer;
 
-                return parentContainer;
-
-                static async void AddButton(JSObject parent)
-                {
-                    await JSHost.ImportAsync("embed.js", "../embed.js");
-                    EmbedInterop.AddElement(parent);
-                }
-            //}
+            static async void AddButton(JSObject parent)
+            {
+                await JSHost.ImportAsync("embed.js", "../embed.js");
+                EmbedInterop.AddElement(parent);
+            }
         }
     }
 

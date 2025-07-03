@@ -14,7 +14,7 @@ internal sealed partial class Program
 {
     private static async Task Main(string[] args)
     {
-        BuildAvaloniaApp()
+        _ = BuildAvaloniaApp()
             .WithInterFont()
             .AfterSetup(_ =>
             {

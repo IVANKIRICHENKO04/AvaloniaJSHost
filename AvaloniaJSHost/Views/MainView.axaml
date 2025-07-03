@@ -8,5 +8,9 @@
              xmlns:local="using:AvaloniaJSHost.Views"
              x:DataType="vm:MainViewModel">
 
-  <local:NativePage/>
+  <Grid RowDefinitions="* * *" ColumnDefinitions="* * *">
+    
+  <local:EmbedSample Grid.Column="1" Grid.Row="1"/>
+  </Grid>
+  
 </UserControl>
