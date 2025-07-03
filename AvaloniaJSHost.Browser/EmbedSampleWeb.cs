@@ -11,11 +11,11 @@ namespace AvaloniaJSHost.Views
         {
             var parentContainer = (JSObjectControlHandle)createDefault();
 
-            AddButton(parentContainer.Object);
+            AddEllemnt(parentContainer.Object);
 
             return parentContainer;
 
-            static async void AddButton(JSObject parent)
+            static async void AddEllemnt(JSObject parent)
             {
                 await JSHost.ImportAsync("embed.js", "../embed.js");
                 EmbedInterop.AddElement(parent);
@@ -25,9 +25,6 @@ namespace AvaloniaJSHost.Views
 
     internal static partial class EmbedInterop
     {
-        [JSImport("globalThis.document.createElement")]
-        public static partial JSObject CreateElement(string tagName);
-
         [JSImport("AddElement", "embed.js")]
         public static partial void AddElement(JSObject parentObject);
     }
