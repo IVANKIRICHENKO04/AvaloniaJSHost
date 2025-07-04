@@ -1,24 +1,26 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Platform;
 using AvaloniaJSHost.Classes;
-using System;
-using System.Runtime.InteropServices.JavaScript;
+using System.Text.Json.Nodes;
 
 namespace AvaloniaJSHost.Views
 {
-    public class EmbedSample : NativeControlHost
+    public class DirectedControl : NativeControlHost
     {
         public static CustomNativeControl? Implementation { get; set; }
-
-        public EmbedSample()
-        {
-        }
 
         protected override IPlatformHandle CreateNativeControlCore(IPlatformHandle parent)
         {
             var handle = Implementation?.CreateControl(parent, () => base.CreateNativeControlCore(parent))
              ?? base.CreateNativeControlCore(parent);
+
             return handle;
         }
+
+        public void Clear()
+        {
+            DirectedInterop.ClearCanvas(Implementation.Parent);
+        }
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Browser;
 using AvaloniaJSHost;
+using AvaloniaJSHost.Browser;
 using AvaloniaJSHost.Views;
 using System.Runtime.Versioning;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ internal sealed partial class Program
             .AfterSetup(_ =>
             {
                 EmbedSample.Implementation = new EmbedSampleWeb();
+                DirectedControl.Implementation = new DirectedControlWeb();
             })
             .StartBrowserAppAsync("out");
     }
