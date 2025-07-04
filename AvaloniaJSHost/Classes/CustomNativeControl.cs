@@ -8,6 +8,6 @@ namespace AvaloniaJSHost.Classes
     {
         public abstract IPlatformHandle CreateControl(IPlatformHandle parent, Func<IPlatformHandle> createDefault);
 
-        public JSObject Parent { get; set; }
+        public JSObject Parent;
     }
 }

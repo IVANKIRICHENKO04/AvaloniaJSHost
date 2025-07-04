@@ -13,8 +13,6 @@ namespace AvaloniaJSHost.Browser
         {
             var parentContainer = (JSObjectControlHandle)createDefault();
             ImportJsModules(parentContainer.Object);
-
-            
             return parentContainer;
         }
         async void ImportJsModules(JSObject parent)
@@ -23,13 +21,4 @@ namespace AvaloniaJSHost.Browser
             Parent = DirectedInterop.AddElement(parent);
         }
     }
-
-    //internal static partial class DirectedInterop
-    //{
-    //    [JSImport("AddElement", "DirectedModule.js")]
-    //    public static partial void AddElement(JSObject parentObject);
-
-    //    [JSImport("ClearCanvas", "DirectedModule.js")]
-    //    public static partial void ClearCanvas(JSObject canvas);
-    //}
 }

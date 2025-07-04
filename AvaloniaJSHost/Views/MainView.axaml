@@ -10,12 +10,9 @@
 
   <Grid RowDefinitions="* * *" ColumnDefinitions="* * *">
 
-    <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Vertical">
-      <Button x:Name="ClearCanvas" Content="Очистить"/>
-      <local:DirectedControl x:Name="CanvasOne"/>
-    </StackPanel>
-    <local:DirectedControl x:Name="CanvasThree" Grid.Column="1" Grid.Row="1"/>
-    <local:DirectedControl x:Name="CanvasTwo" Grid.Column="2" Grid.Row="0"/>
+    <local:NativeHost Grid.Column="0" Grid.Row="2"/>
+    <local:NativeHost Grid.Column="1" Grid.Row="1"/>
+    <local:NativeHost Grid.Column="2" Grid.Row="0"/>
   </Grid>
   
 </UserControl>
