@@ -2,7 +2,7 @@
 using Avalonia.Browser;
 using AvaloniaJSHost;
 using AvaloniaJSHost.Browser;
-using AvaloniaJSHost.Views;
+using AvaloniaJSHost.Classes;
 using System.Runtime.Versioning;
 using System.Threading.Tasks;
 
@@ -19,8 +19,7 @@ internal sealed partial class Program
             .WithInterFont()
             .AfterSetup(_ =>
             {
-                EmbedSample.Implementation = new DirectedControlWeb();
-                DirectedControl.Implementation = new DirectedControlWeb();
+                SharredJsHost.Implementation = new DirectedControlWeb();
             })
             .StartBrowserAppAsync("out");
     }

@@ -8,13 +8,11 @@ namespace AvaloniaJSHost.Views
 {
     public class DirectedControl : NativeControlHost
     {
-        public static CustomNativeControl? Implementation { get; set; }
-
         JSObject JS;
 
         protected override IPlatformHandle CreateNativeControlCore(IPlatformHandle parent)
         {
-            var handle = Implementation?.CreateControl(parent, () => base.CreateNativeControlCore(parent));
+            var handle = SharredJsHost.Implementation?.CreateControl(parent, () => base.CreateNativeControlCore(parent));
             InitializeAsync(handle.JsObject);
             return handle.PlatformHandle;
         }

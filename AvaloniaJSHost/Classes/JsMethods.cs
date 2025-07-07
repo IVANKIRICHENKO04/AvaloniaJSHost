@@ -8,8 +8,6 @@ namespace AvaloniaJSHost.Classes
         public static partial JSObject AddElement(JSObject parentObject);
     }
 
-
-
     public static partial class DirectedInterop
     {
         [JSImport("AddElement", "DirectedModule.js")]
