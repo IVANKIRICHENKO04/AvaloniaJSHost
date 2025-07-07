@@ -16,4 +16,13 @@ namespace AvaloniaJSHost.Classes
         [JSImport("ClearCanvas", "DirectedModule.js")]
         public static partial void ClearCanvas(JSObject canvas);
     }
+
+    public static partial class PlotlyInterop
+    {
+        [JSImport("AddPlotlyElement", "PlotlyModule.js")]
+        public static partial JSObject AddPlotlyElement(JSObject parentObject);
+
+        [JSImport("ClearPlot", "PlotlyModule.js")]
+        public static partial void ClearPlot(JSObject canvas);
+    }
 }
