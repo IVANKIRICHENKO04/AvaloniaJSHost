@@ -10,7 +10,7 @@
 
   <Grid RowDefinitions="* * *" ColumnDefinitions="* * *">
 
-    <local:PlotlyControl Grid.Column="0" Grid.Row="2"/>
+    <local:PlotlyWrapper Grid.Column="0" Grid.Row="2"/>
     <local:EmbedSample Grid.Column="1" Grid.Row="1"/>
     <local:NativeHost Grid.Column="2" Grid.Row="0"/>
   </Grid>

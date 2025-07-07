@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:local="using:AvaloniaJSHost.Views"
+             x:Class="AvaloniaJSHost.Views.PlotlyWrapper">
+  <Grid RowDefinitions="auto *">
+    
+    <TextBlock Text="Графики" Grid.Row="0"/>
+    <!-- Ваш NativeControlHost -->
+    <local:PlotlyControl x:Name="PlotlyHost" Grid.Row="1"/>
+
+    <!-- Прозрачный оверлей над ним -->
+    <Border Background="Transparent"
+            PointerPressed="OnOverlayPointerPressed"
+            PointerReleased="OnOverlayPointerReleased"
+            PointerMoved="OnOverlayPointerMoved"/>
+  </Grid>
+</UserControl>

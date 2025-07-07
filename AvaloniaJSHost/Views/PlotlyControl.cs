@@ -1,11 +1,10 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Platform;
 using AvaloniaJSHost.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel;
 using System.Runtime.InteropServices.JavaScript;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AvaloniaJSHost.Views
@@ -26,6 +25,12 @@ namespace AvaloniaJSHost.Views
         {
             await JSHost.ImportAsync("PlotlyModule.js", "../PlotlyModule.js");
             JS = PlotlyInterop.AddPlotlyElement(js);
+        }
+
+        // helper: форвардим событие в JS
+        public void ForwardJsEvent(string type, Point p)
+        {
+            //PlotlyInterop.EnablePointerForwarding(JS);
         }
     }
 }
