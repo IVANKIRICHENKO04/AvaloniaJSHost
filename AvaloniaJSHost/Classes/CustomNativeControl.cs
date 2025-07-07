@@ -6,7 +6,7 @@ namespace AvaloniaJSHost.Classes
 {
     public abstract class CustomNativeControl
     {
-        public abstract IPlatformHandle CreateControl(IPlatformHandle parent, Func<IPlatformHandle> createDefault);
+        public abstract JsControlHandle CreateControl(IPlatformHandle parent, Func<IPlatformHandle> createDefault);
 
         public JSObject Parent;
     }

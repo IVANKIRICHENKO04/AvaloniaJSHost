@@ -19,7 +19,7 @@ internal sealed partial class Program
             .WithInterFont()
             .AfterSetup(_ =>
             {
-                EmbedSample.Implementation = new EmbedSampleWeb();
+                EmbedSample.Implementation = new DirectedControlWeb();
                 DirectedControl.Implementation = new DirectedControlWeb();
             })
             .StartBrowserAppAsync("out");

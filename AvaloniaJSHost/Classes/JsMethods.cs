@@ -2,10 +2,10 @@
 
 namespace AvaloniaJSHost.Classes
 {
-    public static partial class JsMethods
+    public static partial class EmdedInterop
     {
         [JSImport("AddElement", "embed.js")]
-        public static partial void AddElement(JSObject parentObject);
+        public static partial JSObject AddElement(JSObject parentObject);
     }
 
 

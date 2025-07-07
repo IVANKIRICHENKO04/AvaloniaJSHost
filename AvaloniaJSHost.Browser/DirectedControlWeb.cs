@@ -1,7 +1,6 @@
 ﻿using Avalonia.Browser;
 using Avalonia.Platform;
 using AvaloniaJSHost.Classes;
-using AvaloniaJSHost.Views;
 using System;
 using System.Runtime.InteropServices.JavaScript;
 
@@ -9,16 +8,11 @@ namespace AvaloniaJSHost.Browser
 {
     public class DirectedControlWeb : CustomNativeControl
     {
-        public override IPlatformHandle CreateControl(IPlatformHandle parent, Func<IPlatformHandle> createDefault)
+        public override JsControlHandle CreateControl(IPlatformHandle parent, Func<IPlatformHandle> createDefault)
         {
             var parentContainer = (JSObjectControlHandle)createDefault();
-            ImportJsModules(parentContainer.Object);
-            return parentContainer;
-        }
-        async void ImportJsModules(JSObject parent)
-        {
-            await JSHost.ImportAsync("DirectedModule.js", "../DirectedModule.js");
-            Parent = DirectedInterop.AddElement(parent);
+            JsControlHandle handle = new(parentContainer, parentContainer.Object);
+            return handle;
         }
     }
 }
